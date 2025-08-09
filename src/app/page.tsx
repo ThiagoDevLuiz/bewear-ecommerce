@@ -1,7 +1,36 @@
-const Home = () => {
+import Image from "next/image";
+
+import ProductList from "@/components/common/ProductList";
+import { db } from "@/db";
+
+const Home = async () => {
+  const products = await db.query.productTable.findMany({
+    with: {
+      variants: true,
+    },
+  });
+
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="space-y-6">
+      <Image
+        src="/banner-1.png"
+        alt="Leve uma vida com estilo"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="h-auto w-full px-5"
+      />
+
+      <ProductList title="Mais vendidos" products={products} />
+
+      <Image
+        src="/banner-2.png"
+        alt="Seja autêntico"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="h-auto w-full px-5"
+      />
     </div>
   );
 };
