@@ -14,12 +14,12 @@ const ProductItem = ({ product }: ProductItemProps) => {
   const firstVariant = product.variants[0];
 
   return (
-    <Link href="/" className="flex max-w-[200px] flex-col gap-4">
+    <Link href="/" className="flex max-w-[180px] flex-col gap-4">
       <Image
         src={firstVariant.imageUrl}
         alt={firstVariant.name}
-        width={200}
-        height={200}
+        width={180}
+        height={180}
         className="rounded-3xl"
       />
 
