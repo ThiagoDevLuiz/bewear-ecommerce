@@ -1,6 +1,7 @@
 import { desc } from "drizzle-orm";
 import Image from "next/image";
 
+import BrandsPartners from "@/components/common/brandsPartners";
 import CategorySelector from "@/components/common/categorySelector";
 import ProductList from "@/components/common/ProductList";
 import { db } from "@/db";
@@ -32,6 +33,8 @@ const Home = async () => {
         sizes="100vw"
         className="h-auto w-full px-5"
       />
+
+      <BrandsPartners />
 
       <ProductList title="Mais vendidos" products={products} />
 
