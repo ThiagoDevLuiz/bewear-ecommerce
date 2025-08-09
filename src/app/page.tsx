@@ -31,7 +31,7 @@ const Home = async () => {
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-full px-5"
+        className="h-auto w-full"
       />
 
       <BrandsPartners />
@@ -46,7 +46,7 @@ const Home = async () => {
         width={0}
         height={0}
         sizes="100vw"
-        className="h-auto w-full px-5"
+        className="h-auto w-full"
       />
 
       <ProductList title="Novidades" products={newlyCreatedProducts} />

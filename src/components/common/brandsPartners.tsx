@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import FullScreen from "../ui/full-screen";
+
 const brands = [
   {
     id: 1,
@@ -41,26 +43,28 @@ const brands = [
 const BrandsPartners = () => {
   return (
     <div className="mb-10 space-y-6">
-      <h3 className="px-5 font-semibold">Marcas parceiras</h3>
+      <h3 className="font-semibold">Marcas parceiras</h3>
 
-      <div className="flex gap-4 overflow-x-auto px-5 [&::-webkit-scrollbar]:hidden">
-        {brands.map((brand) => (
-          <div key={brand.id} className="space-y-2">
-            <div className="border-muted flex size-20 items-center justify-center rounded-3xl border-2 p-2">
-              <Image
-                src={brand.image}
-                alt={brand.name}
-                width={0}
-                height={0}
-                className="size-10"
-              />
+      <FullScreen>
+        <div className="flex gap-4 overflow-x-auto px-5 lg:px-0 [&::-webkit-scrollbar]:hidden">
+          {brands.map((brand) => (
+            <div key={brand.id} className="space-y-2">
+              <div className="border-muted flex size-20 items-center justify-center rounded-3xl border-2 p-2">
+                <Image
+                  src={brand.image}
+                  alt={brand.name}
+                  width={0}
+                  height={0}
+                  className="size-10"
+                />
+              </div>
+              <h4 className="truncate text-center text-xs font-semibold">
+                {brand.name}
+              </h4>
             </div>
-            <h4 className="truncate text-center text-xs font-semibold">
-              {brand.name}
-            </h4>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </FullScreen>
     </div>
   );
 };
